@@ -144,6 +144,33 @@ footer { text-align: center; padding: 2rem; color: var(--text-muted); font-size:
             <a href="/" class="btn-back">&larr; Back to brainjack.ai</a>
         </section>
 
+        <section class="how">
+            <h2>Build your own</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-num">1</div>
+                    <div>
+                        <h3>Get an ESP32-S3 board with native USB</h3>
+                        <p>Any S3 dev board works. We use the Xiaozhi AI Board (N16R8). ~$10-15 on AliExpress/Amazon.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">2</div>
+                    <div>
+                        <h3>Flash the firmware</h3>
+                        <p>Clone <a href="https://github.com/scrappylabsai/brainjack-firmware">the repo</a>, install PlatformIO, run <code style="background:var(--surface-2);padding:2px 6px;border-radius:4px;">pio run -t upload</code>. That's it.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">3</div>
+                    <div>
+                        <h3>Plug in and pair</h3>
+                        <p>Connect via WiFi captive portal or BLE. Open BrainJack on your phone. Start talking.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section class="faq">
             <h2>FAQ</h2>
             <div class="faq-item">
@@ -156,7 +183,7 @@ footer { text-align: center; padding: 2rem; color: var(--text-muted); font-size:
             </div>
             <div class="faq-item">
                 <h3>What's inside?</h3>
-                <p>ESP32-S3 microcontroller with native USB HID support, WiFi, and Bluetooth. Open hardware — you can build your own from the specs.</p>
+                <p>ESP32-S3 microcontroller with native USB HID support, WiFi, and Bluetooth. Firmware is fully open-source — <a href="https://github.com/scrappylabsai/brainjack-firmware">grab it on GitHub</a>, flash your own, or mod it to your liking.</p>
             </div>
             <div class="faq-item">
                 <h3>Do I need an iPhone?</h3>
