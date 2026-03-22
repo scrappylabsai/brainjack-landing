@@ -440,7 +440,22 @@
                 <h2>Run everywhere.</h2>
                 <p class="section-sub">Install on your computer in 30 seconds. Or plug in the USB dongle — zero setup required.</p>
 
-                <div class="downloads">
+                <div class="install-block">
+                    <div class="install-label">macOS / Linux</div>
+                    <div style="display:flex;align-items:center;gap:12px;">
+                        <code class="cmd" id="install-unix" style="flex:1;user-select:all;">curl -fsSL https://brainjack.ai/install.sh | bash</code>
+                        <button onclick="navigator.clipboard.writeText(document.getElementById('install-unix').textContent);this.textContent='Copied!';setTimeout(()=>this.textContent='Copy',1500)" style="background:var(--surface-2);color:var(--text-muted);border:1px solid var(--border);border-radius:6px;padding:6px 14px;cursor:pointer;font-family:var(--font);font-size:0.75rem;white-space:nowrap;">Copy</button>
+                    </div>
+                </div>
+                <div class="install-block" style="margin-top:16px;">
+                    <div class="install-label">Windows (PowerShell)</div>
+                    <div style="display:flex;align-items:center;gap:12px;">
+                        <code class="cmd" id="install-win" style="flex:1;user-select:all;">irm https://brainjack.ai/install.ps1 | iex</code>
+                        <button onclick="navigator.clipboard.writeText(document.getElementById('install-win').textContent);this.textContent='Copied!';setTimeout(()=>this.textContent='Copy',1500)" style="background:var(--surface-2);color:var(--text-muted);border:1px solid var(--border);border-radius:6px;padding:6px 14px;cursor:pointer;font-family:var(--font);font-size:0.75rem;white-space:nowrap;">Copy</button>
+                    </div>
+                </div>
+
+                <div class="downloads" style="margin-top: 48px;">
                     <a href="https://github.com/scrappylabsai/brainjack-service" class="dl-card">
                         <div class="dl-icon">&#128421;</div>
                         <strong>Windows</strong>
