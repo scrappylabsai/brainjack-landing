@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BrainJack Dongle — Zero-Install Voice-to-Keystroke Hardware</title>
+<style>
+:root {
+    --bg: #0a0a0f;
+    --surface: #12121a;
+    --surface-2: #1a1a28;
+    --text: #e8e8ed;
+    --text-muted: #8b8b9e;
+    --primary: #6c5ce7;
+    --pink: #e84393;
+    --green: #00b894;
+    --border: #1e1e2e;
+    --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --mono: 'JetBrains Mono', 'Fira Code', monospace;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--font); background: var(--bg); color: var(--text); line-height: 1.6; }
+a { color: var(--primary); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.container { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+header { padding: 20px 40px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 12px; }
+header img { width: 32px; height: 32px; border-radius: 6px; }
+header span { font-weight: 800; font-size: 1.1rem; }
+
+.hero { text-align: center; padding: 80px 24px 40px; }
+.hero h1 { font-size: 2.4rem; font-weight: 800; margin-bottom: 16px; }
+.hero h1 span { color: var(--pink); }
+.hero p { color: var(--text-muted); font-size: 1.15rem; max-width: 560px; margin: 0 auto; }
+
+.specs { padding: 40px 0; }
+.spec-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin: 32px 0; }
+.spec-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 24px; text-align: center; }
+.spec-card .icon { font-size: 2rem; margin-bottom: 12px; }
+.spec-card h3 { font-size: 1rem; margin-bottom: 6px; }
+.spec-card p { color: var(--text-muted); font-size: 0.85rem; }
+
+.how { padding: 40px 0; }
+.how h2 { text-align: center; font-size: 1.6rem; margin-bottom: 32px; }
+.steps { display: flex; flex-direction: column; gap: 20px; }
+.step { display: flex; gap: 20px; align-items: flex-start; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 24px; }
+.step-num { background: var(--pink); color: #fff; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; flex-shrink: 0; }
+.step h3 { font-size: 1rem; margin-bottom: 4px; }
+.step p { color: var(--text-muted); font-size: 0.9rem; }
+
+.order { text-align: center; padding: 60px 24px; }
+.order h2 { font-size: 1.8rem; margin-bottom: 12px; }
+.order .price { font-size: 2.4rem; font-weight: 800; color: var(--green); margin: 16px 0; }
+.order .price span { font-size: 1rem; color: var(--text-muted); font-weight: 400; }
+.order .note { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 28px; }
+.btn-order { display: inline-block; padding: 16px 40px; background: var(--pink); color: #fff; border-radius: 8px; font-size: 1.1rem; font-weight: 700; text-decoration: none; transition: all 0.2s; }
+.btn-order:hover { background: #d63384; text-decoration: none; transform: translateY(-2px); }
+.btn-back { display: inline-block; margin-top: 16px; color: var(--text-muted); font-size: 0.85rem; }
+
+.faq { padding: 40px 0 60px; }
+.faq h2 { text-align: center; font-size: 1.4rem; margin-bottom: 24px; }
+.faq-item { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 20px 24px; margin-bottom: 12px; }
+.faq-item h3 { font-size: 0.95rem; margin-bottom: 6px; color: var(--text); }
+.faq-item p { color: var(--text-muted); font-size: 0.85rem; }
+
+footer { text-align: center; padding: 2rem; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid var(--border); }
+
+@media (max-width: 768px) {
+    .hero h1 { font-size: 1.8rem; }
+    .hero { padding: 60px 16px 32px; }
+}
+</style>
+</head>
+<body>
+    <header>
+        <a href="/" style="display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--text);">
+            <img src="assets/logo-dark.jpg" alt="BrainJack">
+            <span>BrainJack</span>
+        </a>
+    </header>
+
+    <main class="container">
+        <div class="hero">
+            <h1>The <span>BrainJack Dongle</span></h1>
+            <p>Plug into any computer. No software. No drivers. No admin rights. It's a USB keyboard that types what you say.</p>
+        </div>
+
+        <section class="specs">
+            <div class="spec-grid">
+                <div class="spec-card">
+                    <div class="icon">&#9000;</div>
+                    <h3>Standard USB HID</h3>
+                    <p>Shows up as a keyboard. Works with every OS. IT can't block it — it IS a keyboard.</p>
+                </div>
+                <div class="spec-card">
+                    <div class="icon">&#128274;</div>
+                    <h3>Zero Footprint</h3>
+                    <p>Nothing installed. No network traffic. No process to flag. AI lives on your phone.</p>
+                </div>
+                <div class="spec-card">
+                    <div class="icon">&#9889;</div>
+                    <h3>Instant Setup</h3>
+                    <p>Plug in USB. Scan QR code from the BrainJack app. Done in 30 seconds.</p>
+                </div>
+                <div class="spec-card">
+                    <div class="icon">&#128225;</div>
+                    <h3>WiFi + BLE</h3>
+                    <p>Connects to your phone over WiFi or Bluetooth. ESP32-S3 based, open hardware.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="how">
+            <h2>How it works</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-num">1</div>
+                    <div>
+                        <h3>Plug the dongle into any USB port</h3>
+                        <p>The computer sees a standard USB keyboard. No drivers, no prompts, no admin access needed.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">2</div>
+                    <div>
+                        <h3>Scan the QR code with BrainJack on your phone</h3>
+                        <p>The app connects to the dongle over WiFi or Bluetooth. One scan, permanently paired.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">3</div>
+                    <div>
+                        <h3>Speak. It types.</h3>
+                        <p>Voice goes through your phone's ASR, text goes to the dongle, dongle types it as USB keystrokes. Works with anything — terminals, IDEs, chat apps, web forms, anything.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="order">
+            <h2>Order Now</h2>
+            <div class="note">Limited first batch — hand-assembled, tested, and shipped by the maker.<br>Includes dongle + USB-C cable + quick start card.</div>
+            <a href="mailto:brian@scrappylabs.ai?subject=BrainJack%20Dongle%20Order&body=Hey%20Brian%2C%0A%0AI%27d%20like%20to%20order%20a%20BrainJack%20dongle.%0A%0AShipping%20info%3A%0AName%3A%20%0AAddress%3A%20%0A%0AThanks!" class="btn-order">Email to Order &rarr;</a>
+            <br>
+            <a href="/" class="btn-back">&larr; Back to brainjack.ai</a>
+        </section>
+
+        <section class="faq">
+            <h2>FAQ</h2>
+            <div class="faq-item">
+                <h3>Do I need the dongle if I install the service?</h3>
+                <p>No. The free software service does the same thing over WiFi. The dongle is for machines where you can't (or don't want to) install anything.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Does it work with locked-down corporate machines?</h3>
+                <p>Yes. That's the killer use case. The dongle appears as a standard USB keyboard — same as a Logitech or Dell. No software, no network traffic, nothing for IT to block.</p>
+            </div>
+            <div class="faq-item">
+                <h3>What's inside?</h3>
+                <p>ESP32-S3 microcontroller with native USB HID support, WiFi, and Bluetooth. Open hardware — you can build your own from the specs.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Do I need an iPhone?</h3>
+                <p>Currently yes — the BrainJack app is iOS only (TestFlight beta). Android is planned.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2026 ScrappyLabs. <a href="/">brainjack.ai</a> | <a href="mailto:brian@scrappylabs.ai">brian@scrappylabs.ai</a>
+    </footer>
+</body>
+</html>
