@@ -139,6 +139,26 @@
             font-size: 0.8rem; color: var(--text-muted); margin-top: 8px;
         }
 
+        /* Signup form */
+        .signup-form { max-width: 480px; margin: 0 auto 12px; }
+        .signup-row {
+            display: flex; gap: 8px;
+        }
+        .signup-input {
+            flex: 1; background: var(--surface); border: 1px solid var(--border);
+            border-radius: 8px; padding: 12px 16px; color: var(--text);
+            font-family: var(--font); font-size: 0.9rem; outline: none;
+            transition: border-color 0.2s;
+        }
+        .signup-input::placeholder { color: var(--text-muted); }
+        .signup-input:focus { border-color: var(--primary); }
+        .signup-btn { white-space: nowrap; flex-shrink: 0; }
+        .signup-msg {
+            font-size: 0.8rem; margin-top: 8px; text-align: center; min-height: 1.2em;
+        }
+        .signup-msg.success { color: var(--green); }
+        .signup-msg.error { color: #ef4444; }
+
         /* Divider */
         .divider {
             height: 1px; background: var(--border);
@@ -202,6 +222,69 @@
         .status-badge.soon { background: rgba(161, 161, 170, 0.1); color: var(--text-muted); }
         .status-card h4 { font-size: 0.95rem; font-weight: 600; margin-bottom: 6px; }
         .status-card p { font-size: 0.8rem; color: var(--text-muted); line-height: 1.5; }
+
+        /* Membership tiers */
+        .tier-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+        .tier-card {
+            background: var(--surface); border: 1px solid var(--border);
+            border-radius: 12px; padding: 28px 24px;
+            display: flex; flex-direction: column; transition: border-color 0.2s;
+        }
+        .tier-card:hover { border-color: var(--text-muted); }
+        .tier-card.featured {
+            border: 2px solid transparent;
+            background-image: linear-gradient(var(--surface), var(--surface)),
+                              linear-gradient(135deg, var(--primary), var(--accent), var(--primary));
+            background-origin: border-box;
+            background-clip: padding-box, border-box;
+            box-shadow: 0 0 24px rgba(124, 58, 237, 0.15), 0 0 48px rgba(124, 58, 237, 0.08);
+            position: relative;
+        }
+        .tier-card.featured:hover {
+            box-shadow: 0 0 32px rgba(124, 58, 237, 0.25), 0 0 64px rgba(124, 58, 237, 0.12);
+        }
+        .tier-label {
+            font-size: 0.65rem; font-weight: 700; text-transform: uppercase;
+            letter-spacing: 0.08em; color: var(--accent); margin-bottom: 8px;
+        }
+        .tier-card.featured .tier-label { color: #c4b5fd; }
+        .tier-price {
+            font-size: 2rem; font-weight: 800; letter-spacing: -0.03em;
+            margin-bottom: 4px; line-height: 1;
+        }
+        .tier-price span {
+            font-size: 0.9rem; font-weight: 500; color: var(--text-secondary);
+        }
+        .tier-name {
+            font-size: 1rem; font-weight: 600; margin-bottom: 16px;
+        }
+        .tier-perks {
+            list-style: none; display: flex; flex-direction: column; gap: 10px;
+            margin-bottom: 24px; flex: 1;
+        }
+        .tier-perks li {
+            font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5;
+            padding-left: 20px; position: relative;
+        }
+        .tier-perks li::before {
+            content: "\2713"; position: absolute; left: 0;
+            color: var(--green); font-weight: 700; font-size: 0.8rem;
+        }
+        .tier-cta {
+            display: block; text-align: center; padding: 10px 20px;
+            border-radius: 8px; font-weight: 600; font-size: 0.85rem;
+            text-decoration: none; transition: all 0.2s;
+            background: var(--surface-2); color: var(--text);
+            border: 1px solid var(--border);
+        }
+        .tier-cta:hover { border-color: var(--text-muted); background: var(--border); }
+        .tier-card.featured .tier-cta {
+            background: var(--primary); color: white; border: none;
+        }
+        .tier-card.featured .tier-cta:hover { background: var(--primary-hover); }
 
         /* Get the app */
         .app-row {
@@ -268,10 +351,10 @@
             </a>
             <nav>
                 <ul class="header-links">
-                    <li class="hide-mobile"><a href="/features.html">Features</a></li>
+                    <li><a href="/features.html">Features</a></li>
                     <li class="hide-mobile"><a href="https://github.com/scrappylabsai/brainjack-service">GitHub</a></li>
                     <li class="hide-mobile"><a href="https://discord.gg/ekRv2zJCHT">Discord</a></li>
-                    <li><a href="https://testflight.apple.com/join/z8H86Qfj" class="header-cta">iOS Beta</a></li>
+                    <li><a href="https://www.patreon.com/cw/brianjack" class="header-cta">Join on Patreon</a></li>
                 </ul>
             </nav>
         </div>
@@ -286,6 +369,7 @@
                 BrainJack turns your phone into a voice-powered keyboard for any machine.
                 Talk naturally, AI generates the text, and it arrives as real keystrokes
                 on your computer &mdash; or stays on your phone's clipboard, ready to paste.
+                Works with your phone mic, Meta glasses, AirPods, or any Bluetooth headset.
             </p>
 
             <div class="install-group">
@@ -305,15 +389,14 @@
                 </div>
             </div>
 
-            <div class="hero-buttons">
-                <a href="https://testflight.apple.com/join/z8H86Qfj" class="btn btn-primary">
-                    Join iOS Beta
-                </a>
-                <a href="https://github.com/scrappylabsai/brainjack-service" class="btn btn-secondary">
-                    View Source
-                </a>
-            </div>
-            <p class="hero-note">Free and open source. Runs on your network. Nothing goes to the cloud.</p>
+            <form class="signup-form" id="hero-signup" onsubmit="return submitSignup(event, this)">
+                <div class="signup-row">
+                    <input type="email" name="email" placeholder="your@email.com" required class="signup-input" aria-label="Email address">
+                    <button type="submit" class="btn btn-primary signup-btn">Get Free Trial</button>
+                </div>
+                <div class="signup-msg" id="hero-signup-msg"></div>
+            </form>
+            <p class="hero-note">Enter your email to get a TestFlight invite &mdash; 7 days of full Pro features, free. Love it? <a href="https://www.patreon.com/cw/brianjack" style="color: var(--accent);">$5/mo on Patreon</a> keeps Pro unlocked through beta &mdash; or buy it outright when it ships.</p>
         </div>
 
         <div class="divider"></div>
@@ -402,21 +485,88 @@
 
         <div class="divider"></div>
 
+        <!-- Membership -->
+        <section>
+            <div class="container">
+                <p class="section-heading">How it works</p>
+                <h2>Try it free. Stay if you love it.</h2>
+                <p class="section-desc">
+                    Download from TestFlight and get 7 days of full Pro features &mdash; no card, no account. After that, $5/mo on Patreon keeps Pro unlocked through beta. When BrainJack hits the App Store, buy it once and own it forever.
+                </p>
+
+                <div class="tier-grid">
+                    <div class="tier-card">
+                        <div class="tier-label">Free</div>
+                        <div class="tier-price">$0</div>
+                        <div class="tier-name">7-Day Trial</div>
+                        <ul class="tier-perks">
+                            <li>Full Pro features for 7 days</li>
+                            <li>On-device speech recognition</li>
+                            <li>Voice to keystrokes + clipboard</li>
+                            <li>AI agent mode</li>
+                            <li>No card required</li>
+                        </ul>
+                        <form class="tier-signup" onsubmit="return submitSignup(event, this)">
+                            <input type="email" name="email" placeholder="your@email.com" required class="signup-input" style="width:100%;margin-bottom:8px;" aria-label="Email for trial">
+                            <button type="submit" class="tier-cta" style="width:100%;cursor:pointer;border:none;font-family:var(--font);">Get TestFlight Invite</button>
+                            <div class="signup-msg" style="margin-top:6px;"></div>
+                        </form>
+                    </div>
+                    <div class="tier-card featured">
+                        <div class="tier-label">Beta Pro</div>
+                        <div class="tier-price">$5<span>/mo</span></div>
+                        <div class="tier-name">Scrappy Supporter</div>
+                        <ul class="tier-perks">
+                            <li>Pro features stay unlocked</li>
+                            <li>Cloud ASR minutes</li>
+                            <li>Early builds before public TestFlight</li>
+                            <li>Dev logs and behind-the-scenes</li>
+                            <li>Cancel anytime &mdash; buy outright later</li>
+                        </ul>
+                        <a href="https://www.patreon.com/cw/brianjack" class="tier-cta">Keep Pro &mdash; $5/mo</a>
+                    </div>
+                    <div class="tier-card">
+                        <div class="tier-label">Coming Soon</div>
+                        <div class="tier-price">One-time</div>
+                        <div class="tier-name">Own It Forever</div>
+                        <ul class="tier-perks">
+                            <li>Buy once on the App Store</li>
+                            <li>Pro forever &mdash; no subscription</li>
+                            <li>Bring your own API keys</li>
+                            <li>Nothing goes to the cloud</li>
+                            <li>Supporters get a discount</li>
+                        </ul>
+                        <span class="tier-cta" style="opacity:0.5;cursor:default;">Coming Soon</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
         <!-- Get the app -->
         <section>
             <div class="container">
                 <p class="section-heading">Get started</p>
-                <h2>Install the service, get the app</h2>
+                <h2>Install the service, sign up for the trial</h2>
                 <p class="section-desc">
-                    Install the service on your computer (one command above), then grab the iOS app to start talking.
+                    Install the service on your computer, drop your email below, and we'll send you a TestFlight invite &mdash; 7 days of full Pro features, free.
                 </p>
 
+                <form class="signup-form" style="max-width:100%;margin-bottom:24px;" onsubmit="return submitSignup(event, this)">
+                    <div class="signup-row">
+                        <input type="email" name="email" placeholder="your@email.com" required class="signup-input" aria-label="Email for trial">
+                        <button type="submit" class="btn btn-primary signup-btn">Get TestFlight Invite</button>
+                    </div>
+                    <div class="signup-msg"></div>
+                </form>
+
                 <div class="app-row">
-                    <a href="https://testflight.apple.com/join/z8H86Qfj" class="app-link">
-                        <img src="assets/image_0_iOS_app__20260309_224557.jpg" alt="BrainJack iOS" class="app-link-icon">
+                    <a href="https://www.patreon.com/cw/brianjack" class="app-link" style="border-color: var(--primary);">
+                        <img src="assets/logo-dark.jpg" alt="BrainJack on Patreon" class="app-link-icon">
                         <div>
-                            <small>Join the beta on</small>
-                            <strong>TestFlight for iOS</strong>
+                            <small>Keep Pro for $5/mo on</small>
+                            <strong>Patreon</strong>
                         </div>
                     </a>
                     <a href="https://github.com/scrappylabsai/brainjack-service" class="app-link">
@@ -432,7 +582,7 @@
                     <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.7;">
                         <strong style="color: var(--text);">Open source.</strong> The service is source-available under BSL 1.1.
                         Bring your own API keys. Your voice data stays on your network.
-                        No accounts, no subscriptions, no tracking.
+                        The $5/mo Patreon keeps Pro unlocked during beta &mdash; or buy it once when it hits the App Store.
                     </p>
                 </div>
             </div>
@@ -447,21 +597,58 @@
                 <span>&copy; 2026 ScrappyLabs</span>
             </div>
             <ul class="footer-links">
+                <li><a href="https://www.patreon.com/cw/brianjack">Patreon</a></li>
                 <li><a href="https://github.com/scrappylabsai/brainjack-service">GitHub</a></li>
                 <li><a href="https://discord.gg/ekRv2zJCHT">Discord</a></li>
                 <li><a href="/privacy.html">Privacy</a></li>
                 <li><a href="/tos.html">Terms</a></li>
-                <li><a href="mailto:brian@scrappylabs.ai">Contact</a></li>
+                <li><a href="/cdn-cgi/l/email-protection#6b0919020a052b1808190a1b1b12070a0918450a02">Contact</a></li>
                 <li><a href="https://scrappylabs.ai">ScrappyLabs</a></li>
             </ul>
         </div>
     </footer>
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         function copyCmd(id, btn) {
             navigator.clipboard.writeText(document.getElementById(id).textContent);
             btn.textContent = 'Copied!';
             setTimeout(() => btn.textContent = 'Copy', 1500);
+        }
+
+        async function submitSignup(e, form) {
+            e.preventDefault();
+            const email = form.querySelector('input[name="email"]').value.trim();
+            const msg = form.querySelector('.signup-msg');
+            const btn = form.querySelector('button[type="submit"]');
+            if (!email) return false;
+
+            btn.disabled = true;
+            btn.textContent = 'Sending...';
+            msg.textContent = '';
+            msg.className = 'signup-msg';
+
+            try {
+                const res = await fetch('https://patreon.scrappylabs.ai/signup', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email })
+                });
+                const data = await res.json();
+                if (res.ok) {
+                    msg.textContent = 'Check your email — TestFlight invite incoming!';
+                    msg.className = 'signup-msg success';
+                    form.querySelector('input[name="email"]').value = '';
+                } else {
+                    msg.textContent = data.detail || 'Something went wrong. Try again.';
+                    msg.className = 'signup-msg error';
+                }
+            } catch {
+                msg.textContent = 'Network error — try again or email brian@scrappylabs.ai';
+                msg.className = 'signup-msg error';
+            }
+            btn.disabled = false;
+            btn.textContent = form.closest('.tier-card') ? 'Get TestFlight Invite' : 'Get Free Trial';
+            return false;
         }
     </script>
 </body>
