@@ -354,7 +354,7 @@
                     <li><a href="/features.html">Features</a></li>
                     <li class="hide-mobile"><a href="https://github.com/scrappylabsai/brainjack-service">GitHub</a></li>
                     <li class="hide-mobile"><a href="https://discord.gg/ekRv2zJCHT">Discord</a></li>
-                    <li><a href="https://www.patreon.com/cw/brianjack" class="header-cta">Join on Patreon</a></li>
+                    <li><a href="https://www.patreon.com/cw/brianjack" class="header-cta">Join the Beta</a></li>
                 </ul>
             </nav>
         </div>
@@ -389,14 +389,22 @@
                 </div>
             </div>
 
-            <form class="signup-form" id="hero-signup" onsubmit="return submitSignup(event, this)">
-                <div class="signup-row">
-                    <input type="email" name="email" placeholder="your@email.com" required class="signup-input" aria-label="Email address">
-                    <button type="submit" class="btn btn-primary signup-btn">Get Free Trial</button>
-                </div>
-                <div class="signup-msg" id="hero-signup-msg"></div>
-            </form>
-            <p class="hero-note">Enter your email to get a TestFlight invite &mdash; 7 days of full Pro features, free. Love it? <a href="https://www.patreon.com/cw/brianjack" style="color: var(--accent);">$5/mo on Patreon</a> keeps Pro unlocked through beta &mdash; or buy it outright when it ships.</p>
+            <div class="hero-buttons">
+                <a href="https://www.patreon.com/cw/brianjack" class="btn btn-primary">Join the Beta</a>
+                <a href="https://github.com/scrappylabsai/brainjack-service" class="btn btn-secondary">View on GitHub</a>
+            </div>
+            <p class="hero-note">Join free on Patreon &rarr; get a TestFlight invite &rarr; start using it. No card, no trial timer. Bring your own API keys.</p>
+
+            <details style="max-width: 480px; margin: 20px auto 0; text-align: left;">
+                <summary style="font-size: 0.8rem; color: var(--text-muted); cursor: pointer;">Don't want Patreon? Enter your email instead</summary>
+                <form class="signup-form" id="hero-signup" style="margin-top: 12px;" onsubmit="return submitSignup(event, this)">
+                    <div class="signup-row">
+                        <input type="email" name="email" placeholder="your@email.com" required class="signup-input" aria-label="Email address">
+                        <button type="submit" class="btn btn-primary signup-btn">Get TestFlight Invite</button>
+                    </div>
+                    <div class="signup-msg" id="hero-signup-msg"></div>
+                </form>
+            </details>
         </div>
 
         <div class="divider"></div>
@@ -488,42 +496,38 @@
         <!-- Membership -->
         <section>
             <div class="container">
-                <p class="section-heading">How it works</p>
-                <h2>Try it free. Stay if you love it.</h2>
+                <p class="section-heading">Beta access</p>
+                <h2>Join the beta. It's free.</h2>
                 <p class="section-desc">
-                    Download from TestFlight and get 7 days of full Pro features &mdash; no card, no account. After that, $5/mo on Patreon keeps Pro unlocked through beta. When BrainJack hits the App Store, buy it once and own it forever.
+                    We need testers. Join on Patreon, get a TestFlight invite, use the full app on-device with your own API keys. No card, no time limit. If you want to support the project or get cloud features, there's a paid tier too.
                 </p>
 
                 <div class="tier-grid">
-                    <div class="tier-card">
-                        <div class="tier-label">Free</div>
-                        <div class="tier-price">$0</div>
-                        <div class="tier-name">7-Day Trial</div>
+                    <div class="tier-card featured">
+                        <div class="tier-label">Beta Tester</div>
+                        <div class="tier-price">Free</div>
+                        <div class="tier-name">Join the Beta</div>
                         <ul class="tier-perks">
-                            <li>Full Pro features for 7 days</li>
+                            <li>TestFlight access &mdash; no time limit</li>
                             <li>On-device speech recognition</li>
                             <li>Voice to keystrokes + clipboard</li>
-                            <li>AI agent mode</li>
-                            <li>No card required</li>
+                            <li>Bring your own API keys</li>
+                            <li>Dev logs and community updates</li>
                         </ul>
-                        <form class="tier-signup" onsubmit="return submitSignup(event, this)">
-                            <input type="email" name="email" placeholder="your@email.com" required class="signup-input" style="width:100%;margin-bottom:8px;" aria-label="Email for trial">
-                            <button type="submit" class="tier-cta" style="width:100%;cursor:pointer;border:none;font-family:var(--font);">Get TestFlight Invite</button>
-                            <div class="signup-msg" style="margin-top:6px;"></div>
-                        </form>
+                        <a href="https://www.patreon.com/cw/brianjack" class="tier-cta">Join Free on Patreon</a>
                     </div>
-                    <div class="tier-card featured">
-                        <div class="tier-label">Beta Pro</div>
+                    <div class="tier-card">
+                        <div class="tier-label">Supporter</div>
                         <div class="tier-price">$5<span>/mo</span></div>
                         <div class="tier-name">Scrappy Supporter</div>
                         <ul class="tier-perks">
-                            <li>Pro features stay unlocked</li>
-                            <li>Cloud ASR minutes</li>
+                            <li>Everything in beta, plus:</li>
+                            <li>Cloud ASR &mdash; no API keys needed</li>
                             <li>Early builds before public TestFlight</li>
-                            <li>Dev logs and behind-the-scenes</li>
+                            <li>Support an indie dev</li>
                             <li>Cancel anytime &mdash; buy outright later</li>
                         </ul>
-                        <a href="https://www.patreon.com/cw/brianjack" class="tier-cta">Keep Pro &mdash; $5/mo</a>
+                        <a href="https://www.patreon.com/cw/brianjack" class="tier-cta">Support &mdash; $5/mo</a>
                     </div>
                     <div class="tier-card">
                         <div class="tier-label">Coming Soon</div>
@@ -534,7 +538,7 @@
                             <li>Pro forever &mdash; no subscription</li>
                             <li>Bring your own API keys</li>
                             <li>Nothing goes to the cloud</li>
-                            <li>Supporters get a discount</li>
+                            <li>Beta testers get a discount</li>
                         </ul>
                         <span class="tier-cta" style="opacity:0.5;cursor:default;">Coming Soon</span>
                     </div>
@@ -548,24 +552,16 @@
         <section>
             <div class="container">
                 <p class="section-heading">Get started</p>
-                <h2>Install the service, sign up for the trial</h2>
+                <h2>Install the service, join the beta</h2>
                 <p class="section-desc">
-                    Install the service on your computer, drop your email below, and we'll send you a TestFlight invite &mdash; 7 days of full Pro features, free.
+                    Install the service on your computer, join on Patreon (free), and we'll send you a TestFlight invite.
                 </p>
 
-                <form class="signup-form" style="max-width:100%;margin-bottom:24px;" onsubmit="return submitSignup(event, this)">
-                    <div class="signup-row">
-                        <input type="email" name="email" placeholder="your@email.com" required class="signup-input" aria-label="Email for trial">
-                        <button type="submit" class="btn btn-primary signup-btn">Get TestFlight Invite</button>
-                    </div>
-                    <div class="signup-msg"></div>
-                </form>
-
-                <div class="app-row">
+                <div class="app-row" style="margin-bottom: 24px;">
                     <a href="https://www.patreon.com/cw/brianjack" class="app-link" style="border-color: var(--primary);">
                         <img src="assets/logo-dark.jpg" alt="BrainJack on Patreon" class="app-link-icon">
                         <div>
-                            <small>Keep Pro for $5/mo on</small>
+                            <small>Join the beta free on</small>
                             <strong>Patreon</strong>
                         </div>
                     </a>
@@ -578,11 +574,22 @@
                     </a>
                 </div>
 
-                <div style="margin-top: 32px;">
+                <details style="margin-bottom: 24px;">
+                    <summary style="font-size: 0.8rem; color: var(--text-muted); cursor: pointer;">Don't want Patreon? Enter your email instead</summary>
+                    <form class="signup-form" style="max-width:100%;margin-top:12px;" onsubmit="return submitSignup(event, this)">
+                        <div class="signup-row">
+                            <input type="email" name="email" placeholder="your@email.com" required class="signup-input" aria-label="Email for TestFlight">
+                            <button type="submit" class="btn btn-primary signup-btn">Get TestFlight Invite</button>
+                        </div>
+                        <div class="signup-msg"></div>
+                    </form>
+                </details>
+
+                <div>
                     <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.7;">
                         <strong style="color: var(--text);">Open source.</strong> The service is source-available under BSL 1.1.
                         Bring your own API keys. Your voice data stays on your network.
-                        The $5/mo Patreon keeps Pro unlocked during beta &mdash; or buy it once when it hits the App Store.
+                        Beta is free &mdash; $5/mo supporter tier if you want cloud features or just want to back the project.
                     </p>
                 </div>
             </div>
