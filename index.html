@@ -136,7 +136,7 @@
         .btn-sm { font-size: 0.8rem; padding: 8px 16px; }
 
         .hero-note {
-            font-size: 0.8rem; color: var(--text-muted); margin-top: 8px;
+            font-size: 0.9rem; color: var(--text-secondary); margin-top: 12px;
         }
 
         /* Signup form */
@@ -389,22 +389,19 @@
                 </div>
             </div>
 
-            <div class="hero-buttons">
-                <a href="https://www.patreon.com/cw/brianjack/membership" class="btn btn-primary">Join the Beta</a>
+            <form class="signup-form" id="hero-signup" onsubmit="return submitSignup(event, this)">
+                <div class="signup-row">
+                    <input type="email" name="email" placeholder="your@email.com" required class="signup-input" aria-label="Email address">
+                    <button type="submit" class="btn btn-primary signup-btn">Get TestFlight Invite</button>
+                </div>
+                <div class="signup-msg" id="hero-signup-msg"></div>
+            </form>
+            <p class="hero-note" style="color: var(--text-secondary);">7 days free, full Pro features, no credit card. <a href="https://www.patreon.com/cw/brianjack/membership" style="color: var(--accent);">Or join on Patreon</a> &rarr; $5/mo to keep it after that.</p>
+
+            <div class="hero-buttons" style="margin-top: 16px;">
+                <a href="https://www.patreon.com/cw/brianjack/membership" class="btn btn-secondary">Join on Patreon</a>
                 <a href="https://github.com/scrappylabsai/brainjack-service" class="btn btn-secondary">View on GitHub</a>
             </div>
-            <p class="hero-note">Join on Patreon &rarr; get a TestFlight invite &rarr; 7 days free. Bring your own API keys. $5/mo to keep it after that.</p>
-
-            <details style="max-width: 480px; margin: 20px auto 0; text-align: left;">
-                <summary style="font-size: 0.8rem; color: var(--text-muted); cursor: pointer;">Don't want Patreon? Enter your email instead</summary>
-                <form class="signup-form" id="hero-signup" style="margin-top: 12px;" onsubmit="return submitSignup(event, this)">
-                    <div class="signup-row">
-                        <input type="email" name="email" placeholder="your@email.com" required class="signup-input" aria-label="Email address">
-                        <button type="submit" class="btn btn-primary signup-btn">Get TestFlight Invite</button>
-                    </div>
-                    <div class="signup-msg" id="hero-signup-msg"></div>
-                </form>
-            </details>
         </div>
 
         <div class="divider"></div>
