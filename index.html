@@ -373,8 +373,15 @@
             </p>
 
             <div class="install-group">
+                <div class="install-box" style="border-color: var(--primary); background: linear-gradient(135deg, rgba(124,58,237,0.06), transparent);">
+                    <div class="install-label" style="color: var(--accent);">macOS App &mdash; drag to Applications</div>
+                    <div class="install-row">
+                        <span style="font-size: 0.85rem; color: var(--text-secondary); flex: 1;">Download BrainJack.dmg &mdash; menubar app, auto-setup, QR pairing</span>
+                        <a href="https://stuff.loser.com/public/BrainJack.dmg" class="copy-btn" style="background: var(--primary); color: white; border-color: var(--primary); text-decoration: none; padding: 6px 14px; font-weight: 600;" download>Download</a>
+                    </div>
+                </div>
                 <div class="install-box">
-                    <div class="install-label">macOS / Linux</div>
+                    <div class="install-label">macOS / Linux (Terminal)</div>
                     <div class="install-row">
                         <code class="install-cmd" id="cmd-unix">curl -fsSL https://brainjack.ai/install.sh | bash</code>
                         <button class="copy-btn" onclick="copyCmd('cmd-unix', this)">Copy</button>
@@ -555,7 +562,14 @@
                 </p>
 
                 <div class="app-row" style="margin-bottom: 24px;">
-                    <a href="https://www.patreon.com/cw/brianjack/membership" class="app-link" style="border-color: var(--primary);">
+                    <a href="https://stuff.loser.com/public/BrainJack.dmg" class="app-link" style="border-color: var(--primary);" download>
+                        <img src="assets/logo-dark.jpg" alt="BrainJack for macOS" class="app-link-icon">
+                        <div>
+                            <small>Download for macOS</small>
+                            <strong>BrainJack.dmg</strong>
+                        </div>
+                    </a>
+                    <a href="https://www.patreon.com/cw/brianjack/membership" class="app-link">
                         <img src="assets/logo-dark.jpg" alt="BrainJack on Patreon" class="app-link-icon">
                         <div>
                             <small>7 days free on</small>
@@ -584,7 +598,7 @@
 
                 <div>
                     <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.7;">
-                        <strong style="color: var(--text);">Open source.</strong> The service is source-available under BSL 1.1.
+                        <strong style="color: var(--text);">Open source.</strong> The service is open source under Apache 2.0.
                         Bring your own API keys. Your voice data stays on your network.
                         7 days free, then $5/mo to keep it &mdash; or buy it once when it hits the App Store.
                     </p>
