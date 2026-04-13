@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BrainJack — Features</title>
-    <meta name="description" content="Voice to keystrokes, AI agent mode, USB dongle, multi-device management. Everything BrainJack does, explained.">
+    <meta name="description" content="Voice to keystrokes. AI content generation. USB dongle. SSH terminal. Fully local. Open source.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -13,7 +13,6 @@
             --bg: #09090b;
             --surface: #0f0f12;
             --surface-2: #16161a;
-            --surface-3: #1c1c22;
             --text: #fafafa;
             --text-secondary: #a1a1aa;
             --text-muted: #71717a;
@@ -22,13 +21,6 @@
             --primary-dim: rgba(124, 58, 237, 0.10);
             --accent: #a78bfa;
             --green: #22c55e;
-            --green-dim: rgba(34, 197, 94, 0.10);
-            --blue: #3b82f6;
-            --blue-dim: rgba(59, 130, 246, 0.10);
-            --pink: #ec4899;
-            --pink-dim: rgba(236, 72, 153, 0.10);
-            --amber: #f59e0b;
-            --amber-dim: rgba(245, 158, 11, 0.10);
             --border: #27272a;
             --border-subtle: #1f1f24;
             --font: 'Inter', system-ui, -apple-system, sans-serif;
@@ -83,103 +75,56 @@
         }
         .header-cta:hover { background: var(--primary-hover); }
 
-        /* Layout */
-        .container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
-        .container-wide { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
-
         /* Hero */
-        .hero { padding: 140px 24px 72px; text-align: center; }
-        .hero-inner { max-width: 700px; margin: 0 auto; }
-        .hero-badge {
-            display: inline-block; font-size: 0.68rem; font-weight: 600;
-            text-transform: uppercase; letter-spacing: 0.08em;
-            padding: 5px 14px; border-radius: 100px; margin-bottom: 24px;
-            background: var(--primary-dim); color: var(--accent); border: 1px solid rgba(124,58,237,0.18);
-        }
+        .hero { padding: 140px 24px 64px; text-align: center; }
+        .hero-inner { max-width: 640px; margin: 0 auto; }
         .hero h1 {
             font-size: clamp(2rem, 4.5vw, 2.75rem); font-weight: 800;
-            letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 20px;
+            letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 16px;
         }
         .hero p {
             font-size: 1.05rem; color: var(--text-secondary); line-height: 1.7;
-            max-width: 560px; margin: 0 auto 36px;
+            max-width: 520px; margin: 0 auto;
         }
-        .hero-ctas {
-            display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;
+
+        /* Feature grid */
+        .features { max-width: 800px; margin: 0 auto; padding: 0 24px 72px; }
+
+        .feature {
+            display: grid; grid-template-columns: 56px 1fr; gap: 0 20px;
+            padding: 28px 0; border-bottom: 1px solid var(--border-subtle);
         }
-        .btn {
-            display: inline-flex; align-items: center; gap: 8px;
-            padding: 11px 22px; border-radius: 8px; font-weight: 600;
-            text-decoration: none; font-size: 0.875rem; transition: all 0.2s;
+        .feature:last-child { border-bottom: none; }
+
+        .feature-icon {
+            width: 56px; height: 56px; border-radius: 12px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.5rem; grid-row: 1 / 3;
+            background: var(--surface); border: 1px solid var(--border-subtle);
         }
-        .btn-primary { background: var(--primary); color: white; }
-        .btn-primary:hover { background: var(--primary-hover); }
-        .btn-secondary { background: transparent; color: var(--text); border: 1px solid var(--border); }
-        .btn-secondary:hover { border-color: var(--text-muted); background: var(--surface); }
+
+        .feature h3 {
+            font-size: 1rem; font-weight: 700; letter-spacing: -0.01em;
+            margin-bottom: 4px; align-self: end;
+        }
+        .feature p {
+            font-size: 0.88rem; color: var(--text-muted); line-height: 1.6;
+            align-self: start;
+        }
 
         /* Divider */
-        .divider { height: 1px; background: var(--border); max-width: 1100px; margin: 0 auto; }
+        .divider { height: 1px; background: var(--border); max-width: 800px; margin: 0 auto; }
 
-        /* Feature Sections */
-        .feature-section { padding: 72px 24px; }
-
-        .section-tag {
-            font-size: 0.62rem; font-weight: 600; text-transform: uppercase;
-            letter-spacing: 0.1em; padding: 4px 10px; border-radius: 4px;
-            display: inline-block; margin-bottom: 14px;
-        }
-        .tag-purple { background: var(--primary-dim); color: var(--accent); }
-        .tag-green { background: var(--green-dim); color: var(--green); }
-        .tag-blue { background: var(--blue-dim); color: var(--blue); }
-        .tag-pink { background: var(--pink-dim); color: var(--pink); }
-        .tag-amber { background: var(--amber-dim); color: var(--amber); }
-
-        .feature-section h2 {
-            font-size: clamp(1.4rem, 3vw, 1.85rem); font-weight: 700;
-            letter-spacing: -0.02em; margin-bottom: 10px; line-height: 1.2;
-        }
-        .feature-section .lead {
-            font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 32px;
-            max-width: 560px; line-height: 1.65;
+        /* Comparison */
+        .comparison { max-width: 800px; margin: 0 auto; padding: 64px 24px; }
+        .comparison h2 {
+            font-size: clamp(1.3rem, 3vw, 1.6rem); font-weight: 700;
+            letter-spacing: -0.02em; margin-bottom: 24px; text-align: center;
         }
 
-        /* Bento grid */
-        .bento { display: grid; gap: 14px; }
-        .bento-2 { grid-template-columns: 1fr 1fr; }
-        .bento-3 { grid-template-columns: 1fr 1fr 1fr; }
-
-        .card {
-            background: var(--surface); border: 1px solid var(--border-subtle);
-            border-radius: 10px; padding: 22px;
-        }
-        .card h4 { font-size: 0.88rem; font-weight: 600; margin-bottom: 6px; }
-        .card p { font-size: 0.82rem; color: var(--text-muted); line-height: 1.6; }
-        .card a { color: var(--accent); }
-
-        .card-wide {
-            background: var(--surface); border: 1px solid var(--border-subtle);
-            border-radius: 10px; padding: 22px; margin-top: 14px;
-        }
-        .card-wide h4 { font-size: 0.88rem; font-weight: 600; margin-bottom: 6px; }
-        .card-wide p { font-size: 0.82rem; color: var(--text-muted); line-height: 1.6; }
-        .card-wide a { color: var(--accent); }
-
-        /* Callout */
-        .callout {
-            background: var(--surface); border: 1px solid rgba(124,58,237,0.2);
-            border-left: 3px solid var(--primary);
-            border-radius: 8px; padding: 20px 22px; margin-top: 14px;
-        }
-        .callout p {
-            font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6;
-            font-style: italic;
-        }
-
-        /* Comparison table */
-        .table-wrap { overflow-x: auto; margin-top: 8px; }
+        .table-wrap { overflow-x: auto; }
         .compare-table {
             width: 100%; border-collapse: collapse; font-size: 0.82rem;
-            min-width: 640px;
         }
         .compare-table th {
             text-align: left; padding: 10px 14px; font-weight: 600;
@@ -194,19 +139,25 @@
         .compare-table td:first-child { color: var(--text); font-weight: 500; }
         .compare-table .yes { color: var(--green); font-weight: 600; }
         .compare-table .no { color: var(--text-muted); }
-        .compare-table .partial { color: var(--amber); }
-        .compare-table .hl {
-            background: rgba(124, 58, 237, 0.06);
-        }
+        .compare-table .hl { background: rgba(124, 58, 237, 0.06); }
         .compare-table thead .hl { color: var(--accent); font-weight: 700; }
 
         /* CTA */
-        .cta-section { text-align: center; padding: 72px 24px; }
+        .cta-section { text-align: center; padding: 64px 24px 80px; }
         .cta-section h2 {
-            font-size: clamp(1.4rem, 3vw, 1.85rem); font-weight: 700;
+            font-size: clamp(1.3rem, 3vw, 1.6rem); font-weight: 700;
             letter-spacing: -0.02em; margin-bottom: 10px;
         }
         .cta-section p { color: var(--text-secondary); margin-bottom: 24px; font-size: 0.95rem; }
+        .btn {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 11px 22px; border-radius: 8px; font-weight: 600;
+            text-decoration: none; font-size: 0.875rem; transition: all 0.2s;
+        }
+        .btn-primary { background: var(--primary); color: white; }
+        .btn-primary:hover { background: var(--primary-hover); }
+        .btn-secondary { background: transparent; color: var(--text); border: 1px solid var(--border); }
+        .btn-secondary:hover { border-color: var(--text-muted); background: var(--surface); }
 
         /* Footer */
         footer { padding: 36px 24px 24px; border-top: 1px solid var(--border); }
@@ -225,17 +176,16 @@
         }
         .footer-links a:hover { color: var(--text); }
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            .bento-2, .bento-3 { grid-template-columns: 1fr; }
+        @media (max-width: 640px) {
+            .feature { grid-template-columns: 44px 1fr; gap: 0 14px; }
+            .feature-icon { width: 44px; height: 44px; font-size: 1.2rem; border-radius: 10px; }
             .header-links .hide-mobile { display: none; }
-            .compare-table { font-size: 0.72rem; }
+            .compare-table { font-size: 0.72rem; min-width: 520px; }
             .compare-table th, .compare-table td { padding: 8px 10px; }
             .footer-inner { flex-direction: column; text-align: center; }
             .footer-links { justify-content: center; }
         }
 
-        /* Reveal */
         .reveal {
             opacity: 0; transform: translateY(16px);
             transition: opacity 0.5s ease, transform 0.5s ease;
@@ -265,316 +215,144 @@
 
     <main id="content">
 
-        <!-- Hero -->
-        <div class="hero">
+        <div class="hero reveal">
             <div class="hero-inner">
-                <span class="hero-badge">Features</span>
-                <h1>Your voice, typed everywhere</h1>
-                <p>
-                    BrainJack turns your phone into a voice-powered AI keyboard for any computer.
-                    Not dictation &mdash; full content generation, keystroke injection,
-                    and multi-machine control from your pocket.
-                </p>
-                <div class="hero-ctas">
-                    <a href="https://testflight.apple.com/join/z8H86Qfj" class="btn btn-primary">Join iOS Beta</a>
-                    <a href="/" class="btn btn-secondary">Install the Service</a>
-                </div>
+                <h1>What BrainJack does</h1>
+                <p>Your phone becomes a voice-powered AI keyboard for any computer. Speak, generate, type &mdash; anywhere.</p>
             </div>
+        </div>
+
+        <div class="features">
+
+            <div class="feature reveal">
+                <div class="feature-icon">&#127908;</div>
+                <h3>Voice to keystrokes</h3>
+                <p>Speak on your phone. Text types on your computer &mdash; real keystrokes into whatever app has focus. Not a paste, not a clipboard hack.</p>
+            </div>
+
+            <div class="feature reveal">
+                <div class="feature-icon">&#129302;</div>
+                <h3>AI agent, not dictation</h3>
+                <p>"Write a professional email declining this meeting." BrainJack generates full content from a prompt. Review on your phone, edit if needed, send with one tap.</p>
+            </div>
+
+            <div class="feature reveal">
+                <div class="feature-icon">&#128221;</div>
+                <h3>Custom agents &amp; prompt management</h3>
+                <p>Build reusable prompt templates &mdash; email writer, code commenter, translator, tone adjuster. Save them, organize them, trigger them by voice.</p>
+            </div>
+
+            <div class="feature reveal">
+                <div class="feature-icon">&#128268;</div>
+                <h3>Software or hardware</h3>
+                <p>Install the service for full features. Or plug in a USB dongle &mdash; zero install on the target machine. Works on BIOS screens, login prompts, air-gapped systems.</p>
+            </div>
+
+            <div class="feature reveal">
+                <div class="feature-icon">&#128433;</div>
+                <h3>SSH terminal</h3>
+                <p>Full terminal from your phone. Manage servers, run commands, check logs. Landscape mode, device profiles, one-tap macros for vim/tmux/emacs.</p>
+            </div>
+
+            <div class="feature reveal">
+                <div class="feature-icon">&#128273;</div>
+                <h3>Bring your own keys</h3>
+                <p>Your LLM, your ASR model, your API keys. OpenAI, Anthropic, Ollama, vLLM, local Whisper &mdash; whatever you want. We don't touch your data.</p>
+            </div>
+
+            <div class="feature reveal">
+                <div class="feature-icon">&#127968;</div>
+                <h3>Fully local</h3>
+                <p>Phone to computer over WiFi. No cloud, no accounts, no tracking. Your voice stays on your network. HIPAA-friendly by design.</p>
+            </div>
+
+            <div class="feature reveal">
+                <div class="feature-icon">&#128220;</div>
+                <h3>Open source</h3>
+                <p>Apache 2.0. Read the code, audit it, fork it, run it forever. <a href="https://github.com/scrappylabsai/brainjack-service" style="color: var(--accent);">View on GitHub</a></p>
+            </div>
+
         </div>
 
         <div class="divider"></div>
 
-        <!-- 1. Voice to Keystrokes -->
-        <section class="feature-section reveal">
-            <div class="container">
-                <span class="section-tag tag-green">Core</span>
-                <h2>Voice in, keystrokes out</h2>
-                <p class="lead">
-                    Speak into your phone. Text appears on your computer &mdash; typed into
-                    whatever app has focus, as if someone were at the keyboard.
-                </p>
-                <div class="bento bento-2">
-                    <div class="card">
-                        <h4>Real keystrokes</h4>
-                        <p>BrainJack types into the active window using native OS APIs &mdash; Windows SendInput, macOS CGEvents, Linux xdotool/ydotool. Not a paste. Real key-by-key input.</p>
-                    </div>
-                    <div class="card">
-                        <h4>Clipboard mode</h4>
-                        <p>Don't have the service installed? The app works standalone &mdash; speak, AI generates, text copies to your phone's clipboard. Paste or share from there.</p>
-                    </div>
-                    <div class="card">
-                        <h4>Private by default</h4>
-                        <p>On-device speech recognition. Your audio stays on your local network. No cloud relay, no third-party processing. Runs offline with a local ASR model.</p>
-                    </div>
-                    <div class="card">
-                        <h4>Every OS</h4>
-                        <p>One service, one install command. Windows, macOS, Linux. Your phone connects over WiFi via WebSocket &mdash; fast, direct, no account needed.</p>
-                    </div>
-                </div>
+        <section class="comparison reveal">
+            <h2>How it compares</h2>
+            <div class="table-wrap">
+                <table class="compare-table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th class="hl">BrainJack</th>
+                            <th>Wispr Flow</th>
+                            <th>Superwhisper</th>
+                            <th>Apple Dictation</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Voice to text</td>
+                            <td class="hl yes">Yes</td>
+                            <td class="yes">Yes</td>
+                            <td class="yes">Yes</td>
+                            <td class="yes">Yes</td>
+                        </tr>
+                        <tr>
+                            <td>AI content generation</td>
+                            <td class="hl yes">Yes</td>
+                            <td class="no">No</td>
+                            <td class="no">No</td>
+                            <td class="no">No</td>
+                        </tr>
+                        <tr>
+                            <td>Type on another computer</td>
+                            <td class="hl yes">Yes</td>
+                            <td class="no">No</td>
+                            <td class="no">No</td>
+                            <td class="no">No</td>
+                        </tr>
+                        <tr>
+                            <td>Works without installing</td>
+                            <td class="hl yes">USB dongle</td>
+                            <td class="no">No</td>
+                            <td class="no">No</td>
+                            <td class="no">No</td>
+                        </tr>
+                        <tr>
+                            <td>Use your own AI keys</td>
+                            <td class="hl yes">Yes</td>
+                            <td class="no">No</td>
+                            <td class="no">No</td>
+                            <td class="no">No</td>
+                        </tr>
+                        <tr>
+                            <td>Runs fully local</td>
+                            <td class="hl yes">Yes</td>
+                            <td class="no">No</td>
+                            <td class="yes">Yes</td>
+                            <td class="no">No</td>
+                        </tr>
+                        <tr>
+                            <td>Open source</td>
+                            <td class="hl yes">Apache 2.0</td>
+                            <td class="no">No</td>
+                            <td class="no">No</td>
+                            <td class="no">No</td>
+                        </tr>
+                        <tr>
+                            <td>Price</td>
+                            <td class="hl" style="color: var(--green); font-weight: 600;">Free beta</td>
+                            <td>$144/yr</td>
+                            <td>$102/yr</td>
+                            <td>Free</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </section>
 
         <div class="divider"></div>
 
-        <!-- 2. Agent Mode -->
-        <section class="feature-section reveal">
-            <div class="container">
-                <span class="section-tag tag-purple">AI-Powered</span>
-                <h2>Agent mode &mdash; not dictation</h2>
-                <p class="lead">
-                    Dictation apps type what you say. BrainJack understands what you mean
-                    and writes what you need.
-                </p>
-                <div class="bento bento-2">
-                    <div class="card">
-                        <h4>Full content generation</h4>
-                        <p>"Write a professional email declining this meeting." BrainJack writes the whole email. Review it on your phone, edit if needed, send to your computer with one tap.</p>
-                    </div>
-                    <div class="card">
-                        <h4>Knowledge base</h4>
-                        <p>Teach it about you &mdash; your writing style, your job, your context. RAG-powered personalization means better output the more you use it.</p>
-                    </div>
-                    <div class="card">
-                        <h4>Conversational context</h4>
-                        <p>"I'm at the vet." ... "Write a letter confirming Buddy's rabies shot on March 15th." BrainJack carries context across prompts within a session.</p>
-                    </div>
-                    <div class="card">
-                        <h4>Review before sending</h4>
-                        <p>Nothing reaches your computer until you approve it. See the output, edit it, then tap to inject. You stay in control.</p>
-                    </div>
-                </div>
-                <div class="callout">
-                    <p>"Having an AI that can generate a full email from a sentence, review it on my phone, then type it into Outlook on my work PC &mdash; that's the workflow nobody else offers."</p>
-                </div>
-            </div>
-        </section>
-
-        <div class="divider"></div>
-
-        <!-- 3. USB Dongle -->
-        <section class="feature-section reveal">
-            <div class="container">
-                <span class="section-tag tag-pink">Hardware</span>
-                <h2>USB dongle &mdash; zero install on target</h2>
-                <p class="lead">
-                    A small USB device that plugs into any computer and appears as a standard
-                    keyboard. No software, no drivers, no admin rights.
-                </p>
-                <div class="bento bento-2">
-                    <div class="card">
-                        <h4>Works with anything</h4>
-                        <p>If it has a USB port, it works. BIOS screens, login prompts, legacy systems, air-gapped machines, hospital terminals, industrial equipment. The target sees a keyboard &mdash; nothing more.</p>
-                    </div>
-                    <div class="card">
-                        <h4>Corporate AI bypass</h4>
-                        <p>Your company blocked ChatGPT and Copilot? The AI lives on your phone. The dongle is a standard USB keyboard to the work PC. No software to flag, no network traffic to detect.</p>
-                    </div>
-                </div>
-                <div class="card-wide">
-                    <h4>How it works</h4>
-                    <p>Plug the dongle into the target machine. Open BrainJack on your phone. The phone connects to the dongle over Bluetooth. Speak, and the dongle types. The target machine never knows AI is involved.</p>
-                </div>
-            </div>
-        </section>
-
-        <div class="divider"></div>
-
-        <!-- 4. Multi-Device -->
-        <section class="feature-section reveal">
-            <div class="container">
-                <span class="section-tag tag-blue">Multi-System</span>
-                <h2>One phone, every machine</h2>
-                <p class="lead">
-                    Manage multiple computers from a single app. Switch between them instantly.
-                </p>
-                <div class="bento bento-2">
-                    <div class="card">
-                        <h4>Device profiles</h4>
-                        <p>Each machine remembers its OS, macros, and auth token. Switch with one tap. BrainJack adapts keystrokes to the target platform automatically.</p>
-                    </div>
-                    <div class="card">
-                        <h4>SSH terminal</h4>
-                        <p>Full terminal access from your phone. Run commands, manage servers, check logs. Landscape mode for real work.</p>
-                    </div>
-                    <div class="card">
-                        <h4>Audio return</h4>
-                        <p>Your computer can speak back to your phone. Build alerts, deploy notifications, agent responses &mdash; anything that can HTTP POST can push audio to your pocket.</p>
-                    </div>
-                    <div class="card">
-                        <h4>Command sheets</h4>
-                        <p>One-tap macro palettes for vim, tmux, emacs, VS Code, shell. Send complex key combos without remembering them. Color-coded and OS-aware.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <div class="divider"></div>
-
-        <!-- 5. BYOK -->
-        <section class="feature-section reveal">
-            <div class="container">
-                <span class="section-tag tag-amber">Your Stack</span>
-                <h2>Bring your own everything</h2>
-                <p class="lead">
-                    BrainJack doesn't lock you into a cloud. Point it at your own
-                    infrastructure and keep full control.
-                </p>
-                <div class="bento bento-3">
-                    <div class="card">
-                        <h4>Your ASR</h4>
-                        <p>Apple on-device, Whisper, Qwen &mdash; or any speech model on your own hardware. Your audio, your model.</p>
-                    </div>
-                    <div class="card">
-                        <h4>Your LLM</h4>
-                        <p>Any OpenAI-compatible API. OpenAI, Anthropic, Ollama, vLLM, LM Studio. Or use our budget fallback.</p>
-                    </div>
-                    <div class="card">
-                        <h4>Your network</h4>
-                        <p>Everything local. Phone to computer over WiFi. No cloud, no accounts, no tracking. HIPAA-friendly by design.</p>
-                    </div>
-                </div>
-                <div class="card-wide">
-                    <h4>Open source</h4>
-                    <p>BrainJack Service is open source under Apache 2.0. Read the code, audit it, modify it, use it however you want. <a href="https://github.com/scrappylabsai/brainjack-service">View on GitHub</a></p>
-                </div>
-            </div>
-        </section>
-
-        <div class="divider"></div>
-
-        <!-- Comparison -->
-        <section class="feature-section reveal">
-            <div class="container-wide">
-                <span class="section-tag tag-purple">Comparison</span>
-                <h2>What nothing else does</h2>
-                <p class="lead">
-                    Other tools handle parts of this. BrainJack is the only one that combines
-                    voice input, AI generation, keystroke injection, and hardware &mdash; from your phone.
-                </p>
-                <div class="table-wrap">
-                    <table class="compare-table">
-                        <thead>
-                            <tr>
-                                <th>Capability</th>
-                                <th class="hl">BrainJack</th>
-                                <th>Wispr Flow</th>
-                                <th>Superwhisper</th>
-                                <th>Termius / Blink</th>
-                                <th>Apple Dictation</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Voice to text</td>
-                                <td class="hl yes">Yes</td>
-                                <td class="yes">Yes</td>
-                                <td class="yes">Yes</td>
-                                <td class="no">No</td>
-                                <td class="yes">Yes</td>
-                            </tr>
-                            <tr>
-                                <td>AI content generation</td>
-                                <td class="hl yes">Yes</td>
-                                <td class="no">No</td>
-                                <td class="no">No</td>
-                                <td class="no">No</td>
-                                <td class="no">No</td>
-                            </tr>
-                            <tr>
-                                <td>Keystroke injection</td>
-                                <td class="hl yes">Yes</td>
-                                <td class="no">No</td>
-                                <td class="no">No</td>
-                                <td class="no">No</td>
-                                <td class="no">No</td>
-                            </tr>
-                            <tr>
-                                <td>Phone as remote</td>
-                                <td class="hl yes">Yes</td>
-                                <td class="no">No</td>
-                                <td class="no">No</td>
-                                <td class="yes">Yes</td>
-                                <td class="no">No</td>
-                            </tr>
-                            <tr>
-                                <td>USB dongle (zero-install)</td>
-                                <td class="hl yes">Yes</td>
-                                <td class="no">No</td>
-                                <td class="no">No</td>
-                                <td class="no">No</td>
-                                <td class="no">No</td>
-                            </tr>
-                            <tr>
-                                <td>Multi-device from one app</td>
-                                <td class="hl yes">Yes</td>
-                                <td class="no">No</td>
-                                <td class="no">No</td>
-                                <td class="yes">Yes</td>
-                                <td class="no">No</td>
-                            </tr>
-                            <tr>
-                                <td>Works on BIOS / login screen</td>
-                                <td class="hl yes">Dongle</td>
-                                <td class="no">No</td>
-                                <td class="no">No</td>
-                                <td class="no">No</td>
-                                <td class="no">No</td>
-                            </tr>
-                            <tr>
-                                <td>BYOK (own AI keys)</td>
-                                <td class="hl yes">Yes</td>
-                                <td class="no">No</td>
-                                <td class="no">No</td>
-                                <td class="no">N/A</td>
-                                <td class="no">No</td>
-                            </tr>
-                            <tr>
-                                <td>Knowledge base / RAG</td>
-                                <td class="hl yes">Yes</td>
-                                <td class="no">No</td>
-                                <td class="no">No</td>
-                                <td class="no">No</td>
-                                <td class="no">No</td>
-                            </tr>
-                            <tr>
-                                <td>Cross-platform (Win/Mac/Linux)</td>
-                                <td class="hl yes">Yes</td>
-                                <td class="yes">Yes</td>
-                                <td class="no">Mac only</td>
-                                <td class="yes">Yes</td>
-                                <td class="no">Apple only</td>
-                            </tr>
-                            <tr>
-                                <td>Runs fully local</td>
-                                <td class="hl yes">Yes</td>
-                                <td class="no">No</td>
-                                <td class="yes">Yes</td>
-                                <td class="partial">Partial</td>
-                                <td class="partial">Partial</td>
-                            </tr>
-                            <tr>
-                                <td>Open source</td>
-                                <td class="hl yes">Apache 2.0</td>
-                                <td class="no">No</td>
-                                <td class="no">No</td>
-                                <td class="partial">Blink only</td>
-                                <td class="no">No</td>
-                            </tr>
-                            <tr>
-                                <td>Pricing</td>
-                                <td class="hl" style="color: var(--green); font-weight: 600;">Free beta</td>
-                                <td>$144/yr</td>
-                                <td>$102/yr</td>
-                                <td>$120/yr</td>
-                                <td>Free</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </section>
-
-        <!-- CTA -->
         <section class="cta-section reveal">
             <h2>Try it today</h2>
             <p>Install the service. Get the app. Start talking.</p>
